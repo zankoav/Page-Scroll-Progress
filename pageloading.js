@@ -2,9 +2,9 @@
     window.addEventListener("load", function () {
 
         const wrapperEl = document.createElement('div');
-        wrapperEl.setAttribute('id', 'page-loader');
+        wrapperEl.setAttribute('id', 'page-loading');
         const lineEl = document.createElement('div');
-        lineEl.setAttribute('class', 'page-loader__line');
+        lineEl.setAttribute('class', 'page-loading__line');
         wrapperEl.appendChild(lineEl);
         document.body.appendChild(wrapperEl);
 
