@@ -1,6 +1,6 @@
 <?php
    /*
-   Plugin Name: Page Loading
+   Plugin Name: Page Scroll Progress
    Plugin URI: http://zankoav.com
    description: A plugin to create on the top side loading line witch always visible and fixed top
    Version: 1.0.0
