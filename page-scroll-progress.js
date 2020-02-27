@@ -2,9 +2,9 @@
     window.addEventListener("load", function () {
 
         const wrapperEl = document.createElement('div');
-        wrapperEl.setAttribute('id', 'page-loading');
+        wrapperEl.setAttribute('id', 'page-scroll-progress');
         const lineEl = document.createElement('div');
-        lineEl.setAttribute('class', 'page-loading__line');
+        lineEl.setAttribute('class', 'page-scroll-progress__line');
         wrapperEl.appendChild(lineEl);
         document.body.appendChild(wrapperEl);
 

@@ -13,8 +13,8 @@
 add_action( 'wp_enqueue_scripts', function(){
 
     $plugin_path = plugin_dir_path( __FILE__ );
-    $css_path = $plugin_path . 'pageloading.css';
-    $js_path = $plugin_path . 'pageloading.js';
+    $css_path = $plugin_path . 'page-scroll-progress.css';
+    $js_path = $plugin_path . 'page-scroll-progress.js';
 
     if(file_exists($css_path) and file_exists($js_path)){
         $css = file_get_contents($css_path); 
