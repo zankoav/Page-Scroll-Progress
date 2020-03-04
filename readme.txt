@@ -3,7 +3,7 @@ Contributors: alexandr
 Tags: scroll, page scroll, page progress, progress
 Requires at least: 4.0
 Tested up to: 5.3
-Stable tag: 1.0.0
+Stable tag: 2.0.0
 License: GPLv2 or later
 
 Page Scroll Progress help you to see how far the page is scrolled.
@@ -21,5 +21,12 @@ You're done!
 
 = 1.0.0 =
 *Release Date - 27 February 2020*
+
+= 2.0.0 =
+*
+Added admin settings. 
+Now you can change line's colors and position.
+Add logo
+*
 
 * Publish to WordPress
