@@ -9,6 +9,22 @@
    License: GPL2
    */
 
+register_activation_hook( __FILE__, 'page_scroll_progress_activate' );
+
+function page_scroll_progress_activate() {
+    $lineColor = get_option('page-scroll-progress-line-color');
+    $substratesColor = get_option('page-scroll-progress-substrates-color');
+    $position = get_option('page-scroll-progress-position');
+    if(!$lineColor){
+        add_option( 'page-scroll-progress-line-color', '#cfcfcf' );
+    }
+    if(!$substratesColor){
+        add_option( 'page-scroll-progress-substrates-color', '#00ccff' );
+    }
+    if(!$position){
+        add_option( 'page-scroll-progress-position', 'top' );
+    }
+}
 
 add_action( 'wp_enqueue_scripts', function(){
 
@@ -29,3 +45,16 @@ add_action( 'wp_enqueue_scripts', function(){
     }
     
 });
+
+function page_scroll_progress_menu_page() {
+    add_menu_page(
+        __( 'Scroll Progress', 'page-scroll-progress' ),
+        'Scroll Progress',
+        'manage_options',
+        'page-scroll-progress/menu-page.php',
+        '',
+        plugins_url( 'page-scroll-progress/images/menu-icon.svg' ),
+        81
+    );
+}
+add_action( 'admin_menu', 'page_scroll_progress_menu_page' );
