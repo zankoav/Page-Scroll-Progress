@@ -1,10 +1,13 @@
 (function () {
     window.addEventListener("load", function () {
-
+        //@variables
         const wrapperEl = document.createElement('div');
         wrapperEl.setAttribute('id', 'page-scroll-progress');
+        wrapperEl.setAttribute('class', `page-scroll-progress_${position}`);
+        wrapperEl.style.backgroundColor = substratesColor;
         const lineEl = document.createElement('div');
         lineEl.setAttribute('class', 'page-scroll-progress__line');
+        lineEl.style.backgroundColor = lineColor;
         wrapperEl.appendChild(lineEl);
         document.body.appendChild(wrapperEl);
 
@@ -23,7 +26,11 @@
 
             let percent = 100 * window.scrollY / (height - heightWindow);
 
-            lineEl.style.width = `${percent}%`;
+            if (position === 'top' || position === 'bottom') {
+                lineEl.style.width = `${percent}%`;
+            } else {
+                lineEl.style.height = `${percent}%`;
+            }
         }
     });
 })();

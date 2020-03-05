@@ -16,10 +16,10 @@ function page_scroll_progress_activate() {
     $substratesColor = get_option('page-scroll-progress-substrates-color');
     $position = get_option('page-scroll-progress-position');
     if(!$lineColor){
-        add_option( 'page-scroll-progress-line-color', '#cfcfcf' );
+        add_option( 'page-scroll-progress-line-color', '#00ccff' );
     }
     if(!$substratesColor){
-        add_option( 'page-scroll-progress-substrates-color', '#00ccff' );
+        add_option( 'page-scroll-progress-substrates-color', '#cfcfcf' );
     }
     if(!$position){
         add_option( 'page-scroll-progress-position', 'top' );
@@ -39,9 +39,16 @@ add_action( 'wp_enqueue_scripts', function(){
         wp_add_inline_style( 'page_loading_style', $css );
 
         $js = file_get_contents($js_path);
+
+        $lineColor = get_option('page-scroll-progress-line-color');
+        $substratesColor = get_option('page-scroll-progress-substrates-color');
+        $position = get_option('page-scroll-progress-position');
+
+        $jsVariables = "const lineColor = '$lineColor', substratesColor = '$substratesColor', position = '$position';\n";
+        $jsContent = str_replace("//@variables", $jsVariables, $js);
         wp_register_script( 'page_loading_scripts', false );
         wp_enqueue_script( 'page_loading_scripts' );
-        wp_add_inline_script( 'page_loading_scripts', $js );
+        wp_add_inline_script( 'page_loading_scripts', $jsContent);
     }
     
 });
