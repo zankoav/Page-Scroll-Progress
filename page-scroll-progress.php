@@ -3,7 +3,7 @@
    Plugin Name: Page Scroll Progress
    Plugin URI: https://github.com/zankoav/Page-Scroll-Progress
    description: A plugin to create on the top side loading line witch always visible and fixed top
-   Version: 2.0.0
+   Version: 2.0.1
    Author: Mr. Alexandr Zanko 
    Author URI: http://zankoav.com
    License: GPL2
